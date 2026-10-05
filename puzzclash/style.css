@@ -1,0 +1,57 @@
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --border: #2d3541;
+  --text: #e8eef7;
+  --muted: #8b97a8;
+  --accent: #4dd4c4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 32px 20px 64px;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+main { max-width: 720px; margin: 0 auto; }
+
+h1 { font-size: 30px; letter-spacing: -0.5px; margin: 0 0 4px; }
+h2 { font-size: 19px; margin: 32px 0 8px; }
+p, li { color: var(--text); }
+li { margin-bottom: 6px; }
+a { color: var(--accent); }
+
+.tagline { color: var(--muted); margin: 0 0 24px; }
+.updated { color: var(--muted); font-size: 14px; }
+
+nav { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0 8px; }
+nav a {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 16px;
+  text-decoration: none;
+  background: var(--panel);
+}
+
+.langs { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 16px; }
+.langs button {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+}
+.langs button[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+/* One language is shown at a time; the rest stay in the document for search engines. */
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+
+footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
